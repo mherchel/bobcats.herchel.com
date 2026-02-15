@@ -128,16 +128,18 @@ def download_and_trim_song(song, index, total):
         # Use the first matching file
         actual_download = TEMP_DIR / temp_files[0]
 
-        # Trim with FFmpeg and convert to webm
-        print(f"  Trimming {song['start_time']} to {song['end_time']}...")
+        # Trim with FFmpeg, convert to webm, and normalize audio
+        print(f"  Trimming {song['start_time']} to {song['end_time']} and normalizing...")
         start_seconds = parse_time_to_seconds(song['start_time'])
         end_seconds = parse_time_to_seconds(song['end_time'])
 
+        # Use loudnorm filter for consistent volume across all clips (EBU R128 standard)
         trim_cmd = [
             'ffmpeg',
             '-i', str(actual_download),
             '-ss', str(start_seconds),
             '-to', str(end_seconds),
+            '-af', 'loudnorm=I=-16:LRA=11:TP=-1.5',  # Normalize to -16 LUFS
             '-c:a', 'libopus',
             '-b:a', '128k',
             '-y',

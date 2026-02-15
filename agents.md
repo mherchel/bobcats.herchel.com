@@ -53,7 +53,7 @@ The CSV file (`Lacrosse Goal songs.csv`) contains player information with the fo
 ## Available Scripts
 
 ### process_songs.py
-**Purpose**: Downloads songs from YouTube, trims them, and generates JSON files.
+**Purpose**: Downloads songs from YouTube, trims them, normalizes audio, and generates JSON files.
 
 **Usage**:
 ```bash
@@ -64,9 +64,17 @@ python3 process_songs.py
 **Features**:
 - Uses relative paths (portable)
 - Skips existing files (fast re-runs)
+- Trims songs to specified time ranges
+- **Normalizes audio to -16 LUFS** (consistent volume across all clips)
 - Generates all three JSON files
 - Shows progress and summary
 - Handles failures gracefully
+
+**Audio Processing**:
+- Downloads best audio quality from YouTube
+- Trims to exact start/end times from CSV
+- Applies loudnorm filter (EBU R128 standard) for consistent loudness
+- Converts to WebM format with Opus codec (128kbps)
 
 ### serve.py
 **Purpose**: Starts a local web server for testing.
@@ -99,6 +107,27 @@ python3 cleanup_unused.py
 - Shows file sizes and total space to free
 - Compares sounds/ directory against sounds.json
 - Useful after removing players or changing songs
+
+### normalize_audio.py
+**Purpose**: Normalizes all existing audio files to consistent volume levels.
+
+**Usage**:
+```bash
+cd /path/to/sillysounds
+python3 normalize_audio.py
+```
+
+**Features**:
+- Two-pass loudness normalization (EBU R128 standard)
+- Normalizes to -16 LUFS (perceived loudness)
+- Processes all .webm files in sounds/ directory
+- Shows progress for each file
+- Safe: creates temp files before replacing originals
+
+**When to use**:
+- After manually adding audio files
+- If some clips are noticeably louder/quieter than others
+- Not needed if using process_songs.py (it normalizes automatically)
 
 ## How to Update Songs
 

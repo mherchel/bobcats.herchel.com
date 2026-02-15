@@ -40,11 +40,15 @@ sillysounds/
 ├── jv.html                 # JV team page
 ├── styles.css              # All styles
 ├── src/app.js             # JavaScript application
-├── sounds/                 # Audio files (.webm)
+├── sounds/                 # Audio files (.webm, normalized)
 ├── sounds.json            # All players data
 ├── sounds_varsity.json    # Varsity players
 ├── sounds_jv.json         # JV players
-└── Lacrosse Goal songs (1).csv  # Source data
+├── Lacrosse Goal songs (1).csv  # Source data
+├── process_songs.py       # Main processing script
+├── normalize_audio.py     # Audio normalization utility
+├── serve.py               # Development server
+└── cleanup_unused.py      # Cleanup utility
 ```
 
 ## 🛠 Scripts
