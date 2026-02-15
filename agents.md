@@ -24,12 +24,16 @@ sillysounds/
 ├── sounds/                 # Audio files directory
 │   ├── player0_var.webm
 │   ├── player4_jv.webm
-│   └── ...                # 28 total WebM files
+│   └── ...                # 35 total WebM files
 ├── sounds.json            # Complete player data (all teams)
-├── sounds_varsity.json    # Varsity players only
-├── sounds_jv.json         # JV players only
-├── process_songs.py       # Automation script for song processing
-└── Lacrosse Goal songs (1).csv # Source data with player/song info
+├── sounds_varsity.json    # Varsity players only (21 players)
+├── sounds_jv.json         # JV players only (14 players)
+├── Lacrosse Goal songs (1).csv # Source data with player/song info
+├── process_songs.py       # Main script: downloads & processes songs
+├── serve.py               # Development server for local testing
+├── cleanup_unused.py      # Utility: removes orphaned audio files
+├── README.md              # Quick start guide
+└── agents.md              # This file: detailed documentation
 ```
 
 ## CSV Data Format
@@ -45,6 +49,56 @@ The CSV file (`Lacrosse Goal songs.csv`) contains player information with the fo
 - Column 6: End Time (format: M:SS or MM:SS)
 
 **Important**: Rows missing any required field are automatically skipped during processing.
+
+## Available Scripts
+
+### process_songs.py
+**Purpose**: Downloads songs from YouTube, trims them, and generates JSON files.
+
+**Usage**:
+```bash
+cd /path/to/sillysounds
+python3 process_songs.py
+```
+
+**Features**:
+- Uses relative paths (portable)
+- Skips existing files (fast re-runs)
+- Generates all three JSON files
+- Shows progress and summary
+- Handles failures gracefully
+
+### serve.py
+**Purpose**: Starts a local web server for testing.
+
+**Usage**:
+```bash
+cd /path/to/sillysounds
+python3 serve.py
+```
+
+Opens at http://localhost:8080
+
+**Features**:
+- Proper MIME types for WebM
+- CORS headers for local testing
+- Shows all available pages
+- Press Ctrl+C to stop
+
+### cleanup_unused.py
+**Purpose**: Removes audio files not referenced in sounds.json.
+
+**Usage**:
+```bash
+cd /path/to/sillysounds
+python3 cleanup_unused.py
+```
+
+**Features**:
+- Safe: asks for confirmation before deleting
+- Shows file sizes and total space to free
+- Compares sounds/ directory against sounds.json
+- Useful after removing players or changing songs
 
 ## How to Update Songs
 
@@ -246,16 +300,17 @@ Tested and working on:
 ## Python Script Details
 
 ### Script Configuration
-Located at top of `process_songs.py`:
+The script uses **relative paths** based on its location:
 
 ```python
-CSV_PATH = "/Users/mikeherchel/Sites/tmp/bobcats/sillysounds/Lacrosse Goal songs.csv"
-SOUNDS_DIR = "/Users/mikeherchel/Sites/tmp/bobcats/sillysounds/sounds"
-SOUNDS_JSON_PATH = "/Users/mikeherchel/Sites/tmp/bobcats/sillysounds/sounds.json"
-TEMP_DIR = "/tmp/lacrosse_songs"
+SCRIPT_DIR = Path(__file__).parent.resolve()
+CSV_PATH = SCRIPT_DIR / "Lacrosse Goal songs (1).csv"
+SOUNDS_DIR = SCRIPT_DIR / "sounds"
+SOUNDS_JSON_PATH = SCRIPT_DIR / "sounds.json"
+TEMP_DIR = Path("/tmp/lacrosse_songs")
 ```
 
-Update these paths if you move the project.
+**Portable**: Works from any location, no need to update paths.
 
 ### Script Functions
 
