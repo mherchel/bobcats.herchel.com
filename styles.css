@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  background-image: url(images/millie600.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+@media (min-width: 600px) {
+  body {
+    background-image: url(images/millie800.jpg);
+  }
+}
+
+@media (min-width: 800px) {
+  body {
+    background-image: url(images/millie1200.jpg);
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    background-image: url(images/millie1600.jpg);
+  }
+}
+
+@media (min-width: 1600px) {
+  body {
+    background-image: url(images/millie.jpg);
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+.keys-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 700px;
+  z-index: 2;
+}
+
+.key {
+  flex-basis: 70px;
+  margin: 2px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border: solid 2px black;
+  border-radius: 2px;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all .1s;
+  -webkit-appearance: none;
+}
+
+.key:hover,
+.key:focus {
+  border-color: rgba(255, 255, 255, 0.7);
+  outline: none;
+}
+
+.key.js-active {
+  transform: scale(1.3);
+  border-color: yellow;
+}
+
+.key-letter {
+  font-size: 2rem;
+  width: 100%;
+}
+
+.key-label {
+  display: block;
+  color: yellow;
+  font-size: 0.5rem;
+}
+
+.github-link {
+  position: fixed;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 25%;
+  max-width: 200px;
+}
