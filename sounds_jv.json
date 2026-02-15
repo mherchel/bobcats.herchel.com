@@ -1,0 +1,80 @@
+[
+  {
+    "keycode": null,
+    "letter": "4",
+    "label": "Zoe Gray",
+    "audioFile": "player4_jv"
+  },
+  {
+    "keycode": null,
+    "letter": "5",
+    "label": "Angelina McMasters",
+    "audioFile": "player5_jv"
+  },
+  {
+    "keycode": null,
+    "letter": "7",
+    "label": "Cadence Alvarez",
+    "audioFile": "player7_jv"
+  },
+  {
+    "keycode": null,
+    "letter": "9",
+    "label": "Yaz Rosado",
+    "audioFile": "player9_jv"
+  },
+  {
+    "keycode": null,
+    "letter": "11",
+    "label": "Hannah Reeves",
+    "audioFile": "player11_jv"
+  },
+  {
+    "keycode": null,
+    "letter": "12",
+    "label": "Anneliese Smith",
+    "audioFile": "player12_jv"
+  },
+  {
+    "keycode": null,
+    "letter": "13",
+    "label": "Hadley Mangas",
+    "audioFile": "player13_jv"
+  },
+  {
+    "keycode": null,
+    "letter": "14",
+    "label": "Emma Priest",
+    "audioFile": "player14_jv"
+  },
+  {
+    "keycode": null,
+    "letter": "18",
+    "label": "Natalie Acosta",
+    "audioFile": "player18_jv"
+  },
+  {
+    "keycode": null,
+    "letter": "20",
+    "label": "Aarna Patel",
+    "audioFile": "player20_jv"
+  },
+  {
+    "keycode": null,
+    "letter": "21",
+    "label": "Ella Russell",
+    "audioFile": "player21_jv"
+  },
+  {
+    "keycode": null,
+    "letter": "25",
+    "label": "Marie Larsen",
+    "audioFile": "player25_jv"
+  },
+  {
+    "keycode": null,
+    "letter": "29",
+    "label": "Ruth Luca",
+    "audioFile": "player29_jv"
+  }
+]

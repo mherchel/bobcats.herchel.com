@@ -15,7 +15,7 @@
 
     // Preload the audio files for quicker playback.
     keys.forEach((key) => {
-      const drumSoundFile = `sounds/${key.audioFile}.mp3`;
+      const drumSoundFile = `sounds/${key.audioFile}.webm`;
       const isAudioLoaded = '';
       const soundKey = key.audioFile;
       sounds[soundKey] = new Audio(drumSoundFile);
@@ -56,7 +56,8 @@
     playSound(drumSound, drumElement);
   }
 
-  fetch('sounds.json')
+  const soundsFile = window.SOUNDS_JSON || 'sounds.json';
+  fetch(soundsFile)
     .then(response => response.json())
     .then(data => processData(data))
     .catch(err => console.error(err));

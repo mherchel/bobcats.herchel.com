@@ -1,170 +1,170 @@
 [
   {
-    "keycode": 49,
-    "letter": "1",
-    "label": "moo poo",
-    "audioFile": "moo"
+    "keycode": null,
+    "letter": "20 JV",
+    "label": "Aarna Patel",
+    "audioFile": "player20_jv"
   },
   {
-    "keycode": 52,
-    "letter": "4",
-    "label": "Dexter",
-    "audioFile": "dexter"
+    "keycode": null,
+    "letter": "5 JV",
+    "label": "Angelina McMasters",
+    "audioFile": "player5_jv"
   },
   {
-    "keycode" : 65,
-    "letter": "a",
-    "label": "a",
-    "audioFile": "a"
+    "keycode": null,
+    "letter": "12 JV",
+    "label": "Anneliese Smith",
+    "audioFile": "player12_jv"
   },
   {
-    "keycode" : 83,
-    "letter": "s",
-    "label": "socks",
-    "audioFile": "socks"
+    "keycode": null,
+    "letter": "23 Var",
+    "label": "Arrielle Bujak",
+    "audioFile": "player23_var"
   },
   {
-    "keycode" : 68,
-    "letter": "d",
-    "label": "Daddy",
-    "audioFile": "daddy"
+    "keycode": null,
+    "letter": "7 Var",
+    "label": "Avery Oyenarte",
+    "audioFile": "player7_var"
   },
   {
-    "keycode" : 78,
-    "letter": "n",
-    "label": "And",
-    "audioFile": "and"
+    "keycode": null,
+    "letter": "4 Var",
+    "label": "Becca Beyer",
+    "audioFile": "player4_var"
   },
   {
-    "keycode" : 80,
-    "letter": "p",
-    "label": "Pee",
-    "audioFile": "pee"
+    "keycode": null,
+    "letter": "3 Var",
+    "label": "Bella Velarde",
+    "audioFile": "player3_var"
   },
   {
-    "keycode" : 66,
-    "letter": "b",
-    "label": "Stinky",
-    "audioFile": "stinky"
+    "keycode": null,
+    "letter": "11 Var",
+    "label": "Brynn Baker",
+    "audioFile": "player11_var"
   },
   {
-    "keycode" : 81,
-    "letter": "q",
-    "label": "Butt",
-    "audioFile": "butt"
+    "keycode": null,
+    "letter": "7 JV",
+    "label": "Cadence Alvarez",
+    "audioFile": "player7_jv"
   },
   {
-    "keycode" : 79,
-    "letter": "o",
-    "label": "Poop",
-    "audioFile": "poop"
+    "keycode": null,
+    "letter": "28 Var",
+    "label": "Camden Allen",
+    "audioFile": "player28_var"
   },
   {
-    "keycode" : 73,
-    "letter":"i",
-    "label": "Is",
-    "audioFile": "is"
+    "keycode": null,
+    "letter": "21 JV",
+    "label": "Ella Russell",
+    "audioFile": "player21_jv"
   },
   {
-    "keycode" : 77,
-    "letter":"m",
-    "label": "Millie",
-    "audioFile": "millie"
+    "keycode": null,
+    "letter": "14 JV",
+    "label": "Emma Priest",
+    "audioFile": "player14_jv"
   },
   {
-    "keycode" : 84,
-    "letter":"t",
-    "label": "Mommy",
-    "audioFile": "mommy"
+    "keycode": null,
+    "letter": "16 Var",
+    "label": "Farrah Arledge",
+    "audioFile": "player16_var"
   },
   {
-    "keycode" : 85,
-    "letter":"u",
-    "label": "Laugh",
-    "audioFile": "laugh"
+    "keycode": null,
+    "letter": "25 Var",
+    "label": "Gabby Kutz",
+    "audioFile": "player25_var"
   },
   {
-    "keycode" : 72,
-    "letter":"h",
-    "label": "Has",
-    "audioFile": "has"
+    "keycode": null,
+    "letter": "13 JV",
+    "label": "Hadley Mangas",
+    "audioFile": "player13_jv"
   },
   {
-    "keycode" : 88,
-    "letter":"x",
-    "label": "Silly Sound 1",
-    "audioFile": "silly1"
+    "keycode": null,
+    "letter": "11 JV",
+    "label": "Hannah Reeves",
+    "audioFile": "player11_jv"
   },
   {
-    "keycode" : 89,
-    "letter":"y",
-    "label": "Yeller",
-    "audioFile": "yeller"
+    "keycode": null,
+    "letter": "27 Var",
+    "label": "Kaite McGinity",
+    "audioFile": "player27_var"
   },
   {
-    "keycode" : 67,
-    "letter":"c",
-    "label": "Coco",
-    "audioFile": "coco"
+    "keycode": null,
+    "letter": "18 Var",
+    "label": "Kylie McGinity",
+    "audioFile": "player18_var"
   },
   {
-    "keycode" : 87,
-    "letter":"w",
-    "label": "Woohoo!",
-    "audioFile": "woohoo"
+    "keycode": null,
+    "letter": "25 JV",
+    "label": "Marie Larsen",
+    "audioFile": "player25_jv"
   },
   {
-    "keycode" : 70,
-    "letter":"f",
-    "label": "Fun",
-    "audioFile": "fun"
+    "keycode": null,
+    "letter": "13 Var",
+    "label": "Michaela George",
+    "audioFile": "player13_var"
   },
   {
-    "keycode" : 76,
-    "letter":"l",
-    "label": "Lolly Rock",
-    "audioFile": "lollyrock"
+    "keycode": null,
+    "letter": "18 JV",
+    "label": "Natalie Acosta",
+    "audioFile": "player18_jv"
   },
   {
-    "keycode" : 74,
-    "letter":"j",
-    "label": "I",
-    "audioFile": "i"
+    "keycode": null,
+    "letter": "21 Var",
+    "label": "Rachel Brown",
+    "audioFile": "player21_var"
   },
   {
-    "keycode" : 86,
-    "letter":"v",
-    "label": "Love",
-    "audioFile": "love"
+    "keycode": null,
+    "letter": "29 JV",
+    "label": "Ruth Luca",
+    "audioFile": "player29_jv"
   },
   {
-    "keycode" : 82,
-    "letter":"r",
-    "label": "Not",
-    "audioFile": "not"
+    "keycode": null,
+    "letter": "0 Var",
+    "label": "Sara Davis",
+    "audioFile": "player0_var"
   },
   {
-    "keycode" : 71,
-    "letter":"g",
-    "label": "Gramma",
-    "audioFile": "gramma"
+    "keycode": null,
+    "letter": "8 Var",
+    "label": "Sumari Botes",
+    "audioFile": "player8_var"
   },
   {
-    "keycode" : 75,
-    "letter":"k",
-    "label": "Rockstar",
-    "audioFile": "rockstar"
+    "keycode": null,
+    "letter": "9 Var",
+    "label": "Summer Hay",
+    "audioFile": "player9_var"
   },
   {
-    "keycode" : 69,
-    "letter":"e",
-    "label": "PupStar",
-    "audioFile": "pupstar"
+    "keycode": null,
+    "letter": "9 JV",
+    "label": "Yaz Rosado",
+    "audioFile": "player9_jv"
   },
-   {
-    "keycode" : 90,
-    "letter":"z",
-    "label": "Having",
-    "audioFile": "having"
+  {
+    "keycode": null,
+    "letter": "4 JV",
+    "label": "Zoe Gray",
+    "audioFile": "player4_jv"
   }
 ]

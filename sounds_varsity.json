@@ -1,0 +1,92 @@
+[
+  {
+    "keycode": null,
+    "letter": "0",
+    "label": "Sara Davis",
+    "audioFile": "player0_var"
+  },
+  {
+    "keycode": null,
+    "letter": "3",
+    "label": "Bella Velarde",
+    "audioFile": "player3_var"
+  },
+  {
+    "keycode": null,
+    "letter": "4",
+    "label": "Becca Beyer",
+    "audioFile": "player4_var"
+  },
+  {
+    "keycode": null,
+    "letter": "7",
+    "label": "Avery Oyenarte",
+    "audioFile": "player7_var"
+  },
+  {
+    "keycode": null,
+    "letter": "8",
+    "label": "Sumari Botes",
+    "audioFile": "player8_var"
+  },
+  {
+    "keycode": null,
+    "letter": "9",
+    "label": "Summer Hay",
+    "audioFile": "player9_var"
+  },
+  {
+    "keycode": null,
+    "letter": "11",
+    "label": "Brynn Baker",
+    "audioFile": "player11_var"
+  },
+  {
+    "keycode": null,
+    "letter": "13",
+    "label": "Michaela George",
+    "audioFile": "player13_var"
+  },
+  {
+    "keycode": null,
+    "letter": "16",
+    "label": "Farrah Arledge",
+    "audioFile": "player16_var"
+  },
+  {
+    "keycode": null,
+    "letter": "18",
+    "label": "Kylie McGinity",
+    "audioFile": "player18_var"
+  },
+  {
+    "keycode": null,
+    "letter": "21",
+    "label": "Rachel Brown",
+    "audioFile": "player21_var"
+  },
+  {
+    "keycode": null,
+    "letter": "23",
+    "label": "Arrielle Bujak",
+    "audioFile": "player23_var"
+  },
+  {
+    "keycode": null,
+    "letter": "25",
+    "label": "Gabby Kutz",
+    "audioFile": "player25_var"
+  },
+  {
+    "keycode": null,
+    "letter": "27",
+    "label": "Kaite McGinity",
+    "audioFile": "player27_var"
+  },
+  {
+    "keycode": null,
+    "letter": "28",
+    "label": "Camden Allen",
+    "audioFile": "player28_var"
+  }
+]
