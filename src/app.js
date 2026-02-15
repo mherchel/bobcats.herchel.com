@@ -1,6 +1,33 @@
 {
   const keys = [];
   const sounds = [];
+  let currentlyPlayingSound = null;
+
+  function stopAllSounds() {
+    Object.keys(sounds).forEach((key) => {
+      sounds[key].pause();
+      sounds[key].currentTime = 0;
+    });
+    document.querySelectorAll('.key.js-active').forEach((el) => {
+      el.classList.remove('js-active');
+    });
+    currentlyPlayingSound = null;
+    hideStopButton();
+  }
+
+  function showStopButton() {
+    const stopBtn = document.getElementById('stop-button');
+    if (stopBtn) {
+      stopBtn.style.display = 'block';
+    }
+  }
+
+  function hideStopButton() {
+    const stopBtn = document.getElementById('stop-button');
+    if (stopBtn) {
+      stopBtn.style.display = 'none';
+    }
+  }
 
   function processData(data) {
     keys.push(...data);
@@ -27,10 +54,32 @@
 
   // Play the sound and add temporary CSS class.
   function playSound(drumSound, drumElement) {
+    // Stop all currently playing sounds
+    Object.keys(sounds).forEach((key) => {
+      sounds[key].pause();
+      sounds[key].currentTime = 0;
+    });
+
+    // Remove active class from all buttons
+    document.querySelectorAll('.key.js-active').forEach((el) => {
+      el.classList.remove('js-active');
+    });
+
+    // Play the new sound
     const sound = drumSound;
     sound.currentTime = 0;
     sound.play();
     drumElement.classList.add('js-active');
+    currentlyPlayingSound = sound;
+
+    // Show stop button
+    showStopButton();
+
+    // Hide stop button when sound ends
+    sound.onended = function() {
+      hideStopButton();
+      currentlyPlayingSound = null;
+    };
 
     setTimeout(() => {
       drumElement.classList.remove('js-active');
@@ -64,4 +113,10 @@
 
   document.addEventListener('click', clickEvent);
   document.addEventListener('keydown', keydownEvent); // @todo move to keypress instead of keydown.
+
+  // Stop button click handler
+  const stopButton = document.getElementById('stop-button');
+  if (stopButton) {
+    stopButton.addEventListener('click', stopAllSounds);
+  }
 }
