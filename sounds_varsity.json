@@ -7,6 +7,18 @@
   },
   {
     "keycode": null,
+    "letter": "1",
+    "label": "Kenzie Griggs",
+    "audioFile": "player1_var"
+  },
+  {
+    "keycode": null,
+    "letter": "2",
+    "label": "Addyson Myers",
+    "audioFile": "player2_var"
+  },
+  {
+    "keycode": null,
     "letter": "3",
     "label": "Bella Velarde",
     "audioFile": "player3_var"
@@ -43,9 +55,21 @@
   },
   {
     "keycode": null,
+    "letter": "12",
+    "label": "Hailey Elshire",
+    "audioFile": "player12_var"
+  },
+  {
+    "keycode": null,
     "letter": "13",
     "label": "Michaela George",
     "audioFile": "player13_var"
+  },
+  {
+    "keycode": null,
+    "letter": "15",
+    "label": "Bridget Williams",
+    "audioFile": "player15_var"
   },
   {
     "keycode": null,
@@ -64,6 +88,12 @@
     "letter": "21",
     "label": "Rachel Brown",
     "audioFile": "player21_var"
+  },
+  {
+    "keycode": null,
+    "letter": "22",
+    "label": "Lillian Michelini",
+    "audioFile": "player22_var"
   },
   {
     "keycode": null,
@@ -88,5 +118,11 @@
     "letter": "28",
     "label": "Camden Allen",
     "audioFile": "player28_var"
+  },
+  {
+    "keycode": null,
+    "letter": "31",
+    "label": "Julia Zona",
+    "audioFile": "player31_var"
   }
 ]

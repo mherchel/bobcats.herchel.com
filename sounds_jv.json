@@ -13,6 +13,12 @@
   },
   {
     "keycode": null,
+    "letter": "6",
+    "label": "Kenlee Epes",
+    "audioFile": "player6_jv"
+  },
+  {
+    "keycode": null,
     "letter": "7",
     "label": "Cadence Alvarez",
     "audioFile": "player7_jv"

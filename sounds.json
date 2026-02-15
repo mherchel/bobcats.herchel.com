@@ -1,9 +1,27 @@
 [
   {
     "keycode": null,
+    "letter": "16 Var",
+    "label": "Farrah Arledge",
+    "audioFile": "player16_var"
+  },
+  {
+    "keycode": null,
+    "letter": "1 Var",
+    "label": "Kenzie Griggs",
+    "audioFile": "player1_var"
+  },
+  {
+    "keycode": null,
     "letter": "20 JV",
     "label": "Aarna Patel",
     "audioFile": "player20_jv"
+  },
+  {
+    "keycode": null,
+    "letter": "2 Var",
+    "label": "Addyson Myers",
+    "audioFile": "player2_var"
   },
   {
     "keycode": null,
@@ -43,6 +61,12 @@
   },
   {
     "keycode": null,
+    "letter": "15 Var",
+    "label": "Bridget Williams",
+    "audioFile": "player15_var"
+  },
+  {
+    "keycode": null,
     "letter": "11 Var",
     "label": "Brynn Baker",
     "audioFile": "player11_var"
@@ -73,12 +97,6 @@
   },
   {
     "keycode": null,
-    "letter": "16 Var",
-    "label": "Farrah Arledge",
-    "audioFile": "player16_var"
-  },
-  {
-    "keycode": null,
     "letter": "25 Var",
     "label": "Gabby Kutz",
     "audioFile": "player25_var"
@@ -91,9 +109,21 @@
   },
   {
     "keycode": null,
+    "letter": "12 Var",
+    "label": "Hailey Elshire",
+    "audioFile": "player12_var"
+  },
+  {
+    "keycode": null,
     "letter": "11 JV",
     "label": "Hannah Reeves",
     "audioFile": "player11_jv"
+  },
+  {
+    "keycode": null,
+    "letter": "31 Var",
+    "label": "Julia Zona",
+    "audioFile": "player31_var"
   },
   {
     "keycode": null,
@@ -103,9 +133,21 @@
   },
   {
     "keycode": null,
+    "letter": "6 JV",
+    "label": "Kenlee Epes",
+    "audioFile": "player6_jv"
+  },
+  {
+    "keycode": null,
     "letter": "18 Var",
     "label": "Kylie McGinity",
     "audioFile": "player18_var"
+  },
+  {
+    "keycode": null,
+    "letter": "22 Var",
+    "label": "Lillian Michelini",
+    "audioFile": "player22_var"
   },
   {
     "keycode": null,
