@@ -49,6 +49,9 @@
       sounds[soundKey].oncanplaythrough = isAudioLoaded;
     });
 
+    // Preload anthem audio
+    sounds['anthem'] = new Audio('sounds/anthem.webm');
+
     document.querySelector('.keys-wrapper').innerHTML = drumsHTML;
   }
 

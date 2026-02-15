@@ -159,6 +159,19 @@ body.jv-page {
   font-size: 0.5rem;
 }
 
+/* Anthem Button Wrapper */
+.anthem-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+#anthem-button {
+  /* Uses .key styles from above */
+}
+
 /* Stop Button Styles */
 #stop-button {
   position: fixed;

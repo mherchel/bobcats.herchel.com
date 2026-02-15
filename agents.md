@@ -229,6 +229,7 @@ python3 process_songs.py
 ### Team Pages (varsity.html, jv.html)
 - Display player buttons with number and name
 - Click to play goal song clip
+- Special "National Anthem" button at bottom (patriotic red/white/blue styling)
 - Fixed header with team name and back link
 - Gradient background (pink for Varsity, blue for JV)
 - Stop button appears when song is playing

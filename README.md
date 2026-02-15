@@ -102,6 +102,7 @@ Aarna Patel,20,JV,White Iverson,Post Malone,1:28,1:50
 
 - **Team-specific pages**: Separate soundboards for Varsity and JV
 - **One-click playback**: Click player button to play their goal song
+- **National Anthem button**: Special button for the US national anthem on both pages
 - **Auto-stop**: New song stops currently playing song
 - **Stop button**: Appears when song is playing, allows early stop
 - **Gradient backgrounds**: Pink for Varsity, blue for JV
