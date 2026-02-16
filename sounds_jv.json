@@ -1,6 +1,24 @@
 [
   {
     "keycode": null,
+    "letter": "1",
+    "label": "Sophie Jackson",
+    "audioFile": "player1_jv"
+  },
+  {
+    "keycode": null,
+    "letter": "2",
+    "label": "Zeina Siddiquis",
+    "disabled": true
+  },
+  {
+    "keycode": null,
+    "letter": "3",
+    "label": "Jozi Rodriguez",
+    "audioFile": "player3_jv"
+  },
+  {
+    "keycode": null,
     "letter": "4",
     "label": "Zoe Gray",
     "audioFile": "player4_jv"
@@ -25,9 +43,21 @@
   },
   {
     "keycode": null,
+    "letter": "8",
+    "label": "Rafaela Ochoa",
+    "disabled": true
+  },
+  {
+    "keycode": null,
     "letter": "9",
     "label": "Yaz Rosado",
     "audioFile": "player9_jv"
+  },
+  {
+    "keycode": null,
+    "letter": "10",
+    "label": "Alexa Leon",
+    "disabled": true
   },
   {
     "keycode": null,
@@ -55,6 +85,18 @@
   },
   {
     "keycode": null,
+    "letter": "15",
+    "label": "Reese Robinson",
+    "audioFile": "player15_jv"
+  },
+  {
+    "keycode": null,
+    "letter": "16",
+    "label": "Elin Sutton",
+    "disabled": true
+  },
+  {
+    "keycode": null,
     "letter": "18",
     "label": "Natalie Acosta",
     "audioFile": "player18_jv"
@@ -73,9 +115,21 @@
   },
   {
     "keycode": null,
+    "letter": "24",
+    "label": "Maya Zielinski",
+    "audioFile": "player24_jv"
+  },
+  {
+    "keycode": null,
     "letter": "25",
     "label": "Marie Larsen",
     "audioFile": "player25_jv"
+  },
+  {
+    "keycode": null,
+    "letter": "28",
+    "label": "Natalia Wood",
+    "audioFile": "player28_jv"
   },
   {
     "keycode": null,

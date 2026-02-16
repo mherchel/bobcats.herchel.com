@@ -299,34 +299,6 @@ python3 process_songs.py
   3. Hard refresh browser (Cmd+Shift+R or Ctrl+Shift+R)
   4. Check browser console for errors
 
-## Technical Notes
-
-### Why WebM?
-- Modern browser support (all current browsers)
-- Good compression (smaller files than MP3)
-- Opus codec provides excellent audio quality at low bitrates
-- Open format, no licensing issues
-
-### Why No Build Step?
-- Originally used Gulp for IE11 compatibility with Babel transpilation
-- Modern browsers support ES6+ natively (const, let, arrow functions, etc.)
-- Removed build complexity for easier maintenance
-- Direct source execution is faster for development
-
-### Audio Preloading
-The app preloads all audio files on page load for instant playback. This means:
-- Initial page load downloads all audio files
-- Subsequent button clicks play instantly
-- Total download: ~8-12MB per team page
-
-### Browser Compatibility
-Tested and working on:
-- Chrome/Edge (Chromium) - Latest
-- Firefox - Latest
-- Safari - Latest
-
-**Note**: IE11 is NOT supported (no longer receives security updates from Microsoft).
-
 ## Python Script Details
 
 ### Script Configuration

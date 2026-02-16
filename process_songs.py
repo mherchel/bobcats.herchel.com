@@ -14,7 +14,7 @@ from pathlib import Path
 
 # Configuration - paths relative to script location
 SCRIPT_DIR = Path(__file__).parent.resolve()
-CSV_PATH = SCRIPT_DIR / "Lacrosse Goal songs (1).csv"
+CSV_PATH = SCRIPT_DIR / "Goal Songs.csv"
 SOUNDS_DIR = SCRIPT_DIR / "sounds"
 SOUNDS_JSON_PATH = SCRIPT_DIR / "sounds.json"
 TEMP_DIR = Path("/tmp/lacrosse_songs")
@@ -41,41 +41,48 @@ def normalize_team_name(team):
     return team.replace(' ', '_')
 
 def parse_csv():
-    """Parse CSV and return list of complete rows"""
-    songs = []
+    """Parse CSV and return list of all player rows (with and without songs)"""
+    players = []
 
     with open(str(CSV_PATH), 'r', encoding='utf-8') as f:
         reader = csv.reader(f)
         next(reader)  # Skip header
 
         for row in reader:
-            if len(row) < 7:
+            if len(row) < 3:
                 continue
 
             name = row[0].strip()
             player_num = row[1].strip()
             team = row[2].strip()
-            song_title = row[3].strip()
-            artist = row[4].strip()
-            start_time = row[5].strip()
-            end_time = row[6].strip()
 
-            # Skip if any required field is missing
-            if not all([name, player_num, team, song_title, start_time, end_time]):
+            # Skip if essential fields are missing
+            if not all([name, player_num, team]):
                 continue
 
-            # Handle Row 21 (Farrah Arledge) - use first song only
-            songs.append({
+            # Get optional song fields (may be empty)
+            artist = row[3].strip() if len(row) > 3 else ''
+            song_title = row[4].strip() if len(row) > 4 else ''
+            start_time = row[5].strip() if len(row) > 5 else ''
+            end_time = row[6].strip() if len(row) > 6 else ''
+            youtube_link = row[7].strip() if len(row) > 7 else ''
+
+            # Check if player has a song
+            has_song = all([song_title, start_time, end_time, youtube_link])
+
+            players.append({
                 'name': name,
                 'player_num': player_num,
                 'team': team,
                 'song_title': song_title,
                 'artist': artist,
                 'start_time': start_time,
-                'end_time': end_time
+                'end_time': end_time,
+                'youtube_link': youtube_link,
+                'has_song': has_song
             })
 
-    return songs
+    return players
 
 def download_and_trim_song(song, index, total):
     """Download song from YouTube and trim it"""
@@ -84,19 +91,20 @@ def download_and_trim_song(song, index, total):
     # Create temp directory
     os.makedirs(TEMP_DIR, exist_ok=True)
 
-    # Construct search query
-    query = f"{song['artist']} {song['song_title']}" if song['artist'] else song['song_title']
-    print(f"  Searching: {query}")
+    # Use direct YouTube link
+    youtube_url = song['youtube_link']
+    print(f"  Downloading from: {youtube_url}")
+    print(f"  Song: {song['song_title']} by {song['artist']}")
 
     # Generate output filename
     team_normalized = normalize_team_name(song['team'])
     output_filename = f"player{song['player_num']}_{team_normalized}.webm"
     output_path = SOUNDS_DIR / output_filename
 
-    # Skip if already exists
+    # Remove existing file to force regeneration
     if os.path.exists(output_path):
-        print(f"  ✓ Already exists: {output_filename}")
-        return output_filename.replace('.webm', ''), True
+        print(f"  Removing existing file to regenerate...")
+        os.remove(output_path)
 
     # Download with yt-dlp
     temp_download = TEMP_DIR / f"temp_{index}.webm"
@@ -106,7 +114,7 @@ def download_and_trim_song(song, index, total):
         print(f"  Downloading...")
         download_cmd = [
             'yt-dlp',
-            f'ytsearch1:{query}',
+            youtube_url,
             '-f', 'bestaudio',
             '-o', str(temp_download),
             '--no-playlist',
@@ -170,45 +178,53 @@ def download_and_trim_song(song, index, total):
         print(f"  ✗ Error: {str(e)}")
         return None, False
 
-def generate_sounds_json(songs, successful_files):
-    """Generate sounds.json from processed songs"""
+def generate_sounds_json(players, successful_files):
+    """Generate sounds.json from all players (with and without songs)"""
     sounds_data = []
     varsity_data = []
     jv_data = []
 
-    for song in songs:
-        team_normalized = normalize_team_name(song['team'])
-        audio_file = f"player{song['player_num']}_{team_normalized}"
+    for player in players:
+        team_normalized = normalize_team_name(player['team'])
+        audio_file = f"player{player['player_num']}_{team_normalized}"
 
-        # Only include if file was successfully created
-        if audio_file in successful_files:
-            # Format team name for display
-            team_display = song['team'].strip()
-            team_lower = team_display.lower()
+        # Format team name for display
+        team_display = player['team'].strip()
+        team_lower = team_display.lower()
 
-            if 'goalie' in team_lower:
-                team_display = 'Goalie'
+        if 'goalie' in team_lower:
+            team_display = 'Goalie'
 
-            # Add to main sounds.json
-            sounds_data.append({
-                'keycode': None,
-                'letter': f"{song['player_num']} {team_display}",
-                'label': song['name'],
-                'audioFile': audio_file
-            })
+        # Create entry for player
+        main_entry = {
+            'keycode': None,
+            'letter': f"{player['player_num']} {team_display}",
+            'label': player['name'],
+        }
 
-            # Add to team-specific JSON (without team in letter)
-            team_entry = {
-                'keycode': None,
-                'letter': song['player_num'],
-                'label': song['name'],
-                'audioFile': audio_file
-            }
+        team_entry = {
+            'keycode': None,
+            'letter': player['player_num'],
+            'label': player['name'],
+        }
 
-            if 'var' in team_lower:
-                varsity_data.append(team_entry)
-            elif 'jv' in team_lower:
-                jv_data.append(team_entry)
+        # Add audioFile if player has a song and it was successfully created
+        if player['has_song'] and audio_file in successful_files:
+            main_entry['audioFile'] = audio_file
+            team_entry['audioFile'] = audio_file
+        else:
+            # Mark as disabled if no song
+            main_entry['disabled'] = True
+            team_entry['disabled'] = True
+
+        # Add to main sounds.json
+        sounds_data.append(main_entry)
+
+        # Add to team-specific JSON
+        if 'var' in team_lower:
+            varsity_data.append(team_entry)
+        elif 'jv' in team_lower:
+            jv_data.append(team_entry)
 
     # Write to sounds.json
     with open(str(SOUNDS_JSON_PATH), 'w', encoding='utf-8') as f:
@@ -224,7 +240,10 @@ def generate_sounds_json(songs, successful_files):
     with open(str(jv_path), 'w', encoding='utf-8') as f:
         json.dump(sorted(jv_data, key=lambda x: int(x['letter'])), f, indent=2)
 
-    print(f"\n✓ Generated sounds.json with {len(sounds_data)} entries")
+    enabled_count = len([p for p in players if p['has_song'] and f"player{p['player_num']}_{normalize_team_name(p['team'])}" in successful_files])
+    disabled_count = len([p for p in players if not p['has_song']])
+
+    print(f"\n✓ Generated sounds.json with {len(sounds_data)} entries ({enabled_count} enabled, {disabled_count} disabled)")
     print(f"✓ Generated sounds_varsity.json with {len(varsity_data)} entries")
     print(f"✓ Generated sounds_jv.json with {len(jv_data)} entries")
 
@@ -258,41 +277,52 @@ def main():
 
     # Parse CSV
     print("\nParsing CSV...")
-    songs = parse_csv()
-    print(f"Found {len(songs)} complete song entries")
+    players = parse_csv()
+    players_with_songs = [p for p in players if p['has_song']]
+    players_without_songs = [p for p in players if not p['has_song']]
+
+    print(f"Found {len(players)} total players")
+    print(f"  - {len(players_with_songs)} with songs")
+    print(f"  - {len(players_without_songs)} without songs (will be disabled)")
 
     # Process each song
     successful_files = []
     failed_songs = []
 
-    for i, song in enumerate(songs, 1):
-        audio_file, success = download_and_trim_song(song, i, len(songs))
+    for i, player in enumerate(players_with_songs, 1):
+        audio_file, success = download_and_trim_song(player, i, len(players_with_songs))
         if success and audio_file:
             successful_files.append(audio_file)
         else:
-            failed_songs.append(song)
+            failed_songs.append(player)
 
-    # Generate sounds.json
-    generate_sounds_json(songs, successful_files)
+    # Generate sounds.json (includes all players)
+    generate_sounds_json(players, successful_files)
 
     # Summary
     print("\n" + "=" * 50)
     print("SUMMARY")
     print("=" * 50)
-    print(f"Total songs: {len(songs)}")
-    print(f"Successful: {len(successful_files)}")
-    print(f"Failed: {len(failed_songs)}")
+    print(f"Total players: {len(players)}")
+    print(f"Players with songs: {len(players_with_songs)}")
+    print(f"  - Successful downloads: {len(successful_files)}")
+    print(f"  - Failed downloads: {len(failed_songs)}")
+    print(f"Players without songs (disabled): {len(players_without_songs)}")
 
     if failed_songs:
-        print("\nFailed songs:")
-        for song in failed_songs:
-            print(f"  - {song['name']} (#{song['player_num']}) - {song['song_title']}")
+        print("\nFailed song downloads:")
+        for player in failed_songs:
+            print(f"  - {player['name']} (#{player['player_num']}) - {player['song_title']}")
+
+    if players_without_songs:
+        print("\nPlayers without songs (buttons will be disabled):")
+        for player in players_without_songs:
+            print(f"  - {player['name']} (#{player['player_num']})")
 
     print("\nNext steps:")
-    print("1. Update app.js to use .webm extension")
-    print("2. Run 'gulp build' in the sillysounds directory")
-    print("3. Update index.html title")
-    print("4. Test the web app")
+    print("1. Test the web app to verify disabled buttons work correctly")
+    print("2. Check that all songs play correctly")
+    print("3. Verify timestamps are correct")
 
 if __name__ == '__main__':
     main()

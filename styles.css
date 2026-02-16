@@ -148,6 +148,19 @@ body.jv-page {
   border-color: yellow;
 }
 
+.key:disabled,
+.key.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.key:disabled:hover,
+.key.disabled:hover {
+  border-color: black;
+  transform: none;
+}
+
 .key-letter {
   font-size: 2rem;
   width: 100%;

@@ -33,20 +33,25 @@
     keys.push(...data);
 
     // Generate the markup.
-    const drumsHTML = keys.map(key =>
-      `<button data-sound="${key.audioFile}" class="key">
+    const drumsHTML = keys.map(key => {
+      const disabledAttr = key.disabled ? 'disabled' : '';
+      const disabledClass = key.disabled ? 'disabled' : '';
+      const dataSound = key.disabled ? '' : `data-sound="${key.audioFile}"`;
+      return `<button ${dataSound} class="key ${disabledClass}" ${disabledAttr}>
          <span class="key-letter">${key.letter}</span>
          <label class="key-label">${key.label}</label>
-       </button>`,
-    ).join('');
+       </button>`;
+    }).join('');
 
-    // Preload the audio files for quicker playback.
+    // Preload the audio files for quicker playback (skip disabled buttons).
     keys.forEach((key) => {
-      const drumSoundFile = `sounds/${key.audioFile}.webm`;
-      const isAudioLoaded = '';
-      const soundKey = key.audioFile;
-      sounds[soundKey] = new Audio(drumSoundFile);
-      sounds[soundKey].oncanplaythrough = isAudioLoaded;
+      if (!key.disabled && key.audioFile) {
+        const drumSoundFile = `sounds/${key.audioFile}.webm`;
+        const isAudioLoaded = '';
+        const soundKey = key.audioFile;
+        sounds[soundKey] = new Audio(drumSoundFile);
+        sounds[soundKey].oncanplaythrough = isAudioLoaded;
+      }
     });
 
     // Preload anthem audio

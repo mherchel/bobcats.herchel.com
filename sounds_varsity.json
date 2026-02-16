@@ -31,6 +31,12 @@
   },
   {
     "keycode": null,
+    "letter": "5",
+    "label": "Madison Crispen",
+    "audioFile": "player5_var"
+  },
+  {
+    "keycode": null,
     "letter": "7",
     "label": "Avery Oyenarte",
     "audioFile": "player7_var"
@@ -46,6 +52,12 @@
     "letter": "9",
     "label": "Summer Hay",
     "audioFile": "player9_var"
+  },
+  {
+    "keycode": null,
+    "letter": "10",
+    "label": "Nadia Turner",
+    "audioFile": "player10_var"
   },
   {
     "keycode": null,
@@ -67,6 +79,12 @@
   },
   {
     "keycode": null,
+    "letter": "14",
+    "label": "Avery Feria",
+    "audioFile": "player14_var"
+  },
+  {
+    "keycode": null,
     "letter": "15",
     "label": "Bridget Williams",
     "audioFile": "player15_var"
@@ -85,6 +103,12 @@
   },
   {
     "keycode": null,
+    "letter": "20",
+    "label": "Chineka James",
+    "audioFile": "player20_var"
+  },
+  {
+    "keycode": null,
     "letter": "21",
     "label": "Rachel Brown",
     "audioFile": "player21_var"
@@ -100,6 +124,12 @@
     "letter": "23",
     "label": "Arrielle Bujak",
     "audioFile": "player23_var"
+  },
+  {
+    "keycode": null,
+    "letter": "24",
+    "label": "Brianna Acosta",
+    "audioFile": "player24_var"
   },
   {
     "keycode": null,

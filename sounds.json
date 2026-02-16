@@ -1,18 +1,6 @@
 [
   {
     "keycode": null,
-    "letter": "16 Var",
-    "label": "Farrah Arledge",
-    "audioFile": "player16_var"
-  },
-  {
-    "keycode": null,
-    "letter": "1 Var",
-    "label": "Kenzie Griggs",
-    "audioFile": "player1_var"
-  },
-  {
-    "keycode": null,
     "letter": "20 JV",
     "label": "Aarna Patel",
     "audioFile": "player20_jv"
@@ -22,6 +10,12 @@
     "letter": "2 Var",
     "label": "Addyson Myers",
     "audioFile": "player2_var"
+  },
+  {
+    "keycode": null,
+    "letter": "10 JV",
+    "label": "Alexa Leon",
+    "disabled": true
   },
   {
     "keycode": null,
@@ -43,6 +37,12 @@
   },
   {
     "keycode": null,
+    "letter": "14 Var",
+    "label": "Avery Feria",
+    "audioFile": "player14_var"
+  },
+  {
+    "keycode": null,
     "letter": "7 Var",
     "label": "Avery Oyenarte",
     "audioFile": "player7_var"
@@ -58,6 +58,12 @@
     "letter": "3 Var",
     "label": "Bella Velarde",
     "audioFile": "player3_var"
+  },
+  {
+    "keycode": null,
+    "letter": "24 Var",
+    "label": "Brianna Acosta",
+    "audioFile": "player24_var"
   },
   {
     "keycode": null,
@@ -85,6 +91,18 @@
   },
   {
     "keycode": null,
+    "letter": "20 Var",
+    "label": "Chineka James",
+    "audioFile": "player20_var"
+  },
+  {
+    "keycode": null,
+    "letter": "16 JV",
+    "label": "Elin Sutton",
+    "disabled": true
+  },
+  {
+    "keycode": null,
     "letter": "21 JV",
     "label": "Ella Russell",
     "audioFile": "player21_jv"
@@ -94,6 +112,12 @@
     "letter": "14 JV",
     "label": "Emma Priest",
     "audioFile": "player14_jv"
+  },
+  {
+    "keycode": null,
+    "letter": "16 Var",
+    "label": "Farrah Arledge",
+    "audioFile": "player16_var"
   },
   {
     "keycode": null,
@@ -121,6 +145,12 @@
   },
   {
     "keycode": null,
+    "letter": "3 JV",
+    "label": "Jozi Rodriguez",
+    "audioFile": "player3_jv"
+  },
+  {
+    "keycode": null,
     "letter": "31 Var",
     "label": "Julia Zona",
     "audioFile": "player31_var"
@@ -139,6 +169,12 @@
   },
   {
     "keycode": null,
+    "letter": "1 Var",
+    "label": "Kenzie Griggs",
+    "audioFile": "player1_var"
+  },
+  {
+    "keycode": null,
     "letter": "18 Var",
     "label": "Kylie McGinity",
     "audioFile": "player18_var"
@@ -151,15 +187,39 @@
   },
   {
     "keycode": null,
+    "letter": "5 Var",
+    "label": "Madison Crispen",
+    "audioFile": "player5_var"
+  },
+  {
+    "keycode": null,
     "letter": "25 JV",
     "label": "Marie Larsen",
     "audioFile": "player25_jv"
   },
   {
     "keycode": null,
+    "letter": "24 JV",
+    "label": "Maya Zielinski",
+    "audioFile": "player24_jv"
+  },
+  {
+    "keycode": null,
     "letter": "13 Var",
     "label": "Michaela George",
     "audioFile": "player13_var"
+  },
+  {
+    "keycode": null,
+    "letter": "10 Var",
+    "label": "Nadia Turner",
+    "audioFile": "player10_var"
+  },
+  {
+    "keycode": null,
+    "letter": "28 JV",
+    "label": "Natalia Wood",
+    "audioFile": "player28_jv"
   },
   {
     "keycode": null,
@@ -175,6 +235,18 @@
   },
   {
     "keycode": null,
+    "letter": "8 JV",
+    "label": "Rafaela Ochoa",
+    "disabled": true
+  },
+  {
+    "keycode": null,
+    "letter": "15 JV",
+    "label": "Reese Robinson",
+    "audioFile": "player15_jv"
+  },
+  {
+    "keycode": null,
     "letter": "29 JV",
     "label": "Ruth Luca",
     "audioFile": "player29_jv"
@@ -184,6 +256,12 @@
     "letter": "0 Var",
     "label": "Sara Davis",
     "audioFile": "player0_var"
+  },
+  {
+    "keycode": null,
+    "letter": "1 JV",
+    "label": "Sophie Jackson",
+    "audioFile": "player1_jv"
   },
   {
     "keycode": null,
@@ -202,6 +280,12 @@
     "letter": "9 JV",
     "label": "Yaz Rosado",
     "audioFile": "player9_jv"
+  },
+  {
+    "keycode": null,
+    "letter": "2 JV",
+    "label": "Zeina Siddiquis",
+    "disabled": true
   },
   {
     "keycode": null,
